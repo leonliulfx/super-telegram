@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全网综艺聚合页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", 微软雅黑, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #718096;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .platform-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        /* 各平台品牌色适配 */
+        .parser1::before {
+            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        }
+
+        .parser2::before {
+            background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
+        }
+
+        .tencent::before {
+            background: linear-gradient(135deg, #00BE06 0%, #009E05 100%);
+        }
+
+        .iqiyi::before {
+            background: linear-gradient(135deg, #00B42A 0%, #009422 100%);
+        }
+
+        .youku::before {
+            background: linear-gradient(135deg, #FF6A00 0%, #E05A00 100%);
+        }
+
+        .mgtv::before {
+            background: linear-gradient(135deg, #FF5C38 0%, #E04A28 100%);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .platform-card:hover::before {
+            opacity: 1;
+        }
+
+        .platform-logo {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: #fff;
+            padding: 8px;
+        }
+
+        .platform-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .platform-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>全网综艺聚合直达</h1>
+            <p>一键跳转各大平台综艺专区，追更更便捷</p>
+        </div>
+
+        <div class="platform-grid">
+            <!-- 视频解析1 -->
+            <a href="https://www.wochala.com/player/" target="_blank" rel="noopener noreferrer" class="platform-card parser1">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNCAyNCAyNCA0MCA0NCAzMlptMCAwIiBmaWxsPSIjNEE5MEUyIi8+Cjwvc3ZnPgo=" alt="视频解析1" class="platform-logo">
+                <div class="platform-name">视频解析1</div>
+                <div class="platform-desc">点击直达解析页面</div>
+            </a>
+
+            <!-- 视频解析2 -->
+            <a href="https://www.quanminjiexi.com/?id=old" target="_blank" rel="noopener noreferrer" class="platform-card parser2">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNCAyNCAyNCA0MCA0NCAzMlptMCAwIiBmaWxsPSIjOUI1OUI2Ii8+Cjwvc3ZnPgo=" alt="视频解析2" class="platform-logo">
+                <div class="platform-name">视频解析2</div>
+                <div class="platform-desc">点击直达解析页面</div>
+            </a>
+
+            <!-- 腾讯视频综艺专区 -->
+            <a href="https://v.qq.com/channel/variety" target="_blank" rel="noopener noreferrer" class="platform-card tencent">
+                <img src="https://v.qq.com/favicon.ico" alt="腾讯视频" class="platform-logo">
+                <div class="platform-name">腾讯视频</div>
+                <div class="platform-desc">点击直达综艺专区</div>
+            </a>
+
+            <!-- 爱奇艺综艺专区 -->
+            <a href="https://www.iqiyi.com/variety/" target="_blank" rel="noopener noreferrer" class="platform-card iqiyi">
+                <img src="https://www.iqiyi.com/favicon.ico" alt="爱奇艺" class="platform-logo">
+                <div class="platform-name">爱奇艺</div>
+                <div class="platform-desc">点击直达综艺专区</div>
+            </a>
+
+            <!-- 优酷综艺专区 -->
+            <a href="https://www.youku.com/ku/webvariety" target="_blank" rel="noopener noreferrer" class="platform-card youku">
+                <img src="https://youku.com/favicon.ico" alt="优酷" class="platform-logo">
+                <div class="platform-name">优酷</div>
+                <div class="platform-desc">点击直达综艺专区</div>
+            </a>
+
+            <!-- 芒果TV综艺专区 -->
+            <a href="https://www.mgtv.com/show/?fpa=1219&fpos=&lastp=ch_home" target="_blank" rel="noopener noreferrer" class="platform-card mgtv">
+                <img src="https://www.mgtv.com/favicon.ico" alt="芒果TV" class="platform-logo">
+                <div class="platform-name">芒果TV</div>
+                <div class="platform-desc">点击直达综艺专区</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            本页面仅做导航跳转，所有内容版权归各平台官方所有
+        </div>
+    </div>
+</body>
+</html>
